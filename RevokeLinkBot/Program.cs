@@ -38,6 +38,8 @@ namespace RevokeLinkBot
 
             Bot.StartReceiving();
             Bot.SendTextMessageAsync(LogId, "Started up!").Wait();
+            Console.Title = "RevokeLinkBot - Connected to @" + OwnUsername;
+            Console.WriteLine("RevokeLinkBot running! Started at " + DateTime.UtcNow.ToString("dd\\.MM\\.yyyy HH\\:mm\\:ss") + " UTC.");
             Thread.Sleep(-1);
         }
 
