@@ -12,7 +12,7 @@ namespace RevokeLinkBot
 {
     class Program
     {
-        public const long LogId = 295152997; //-1001098399855;
+        public const long LogId = -1001098399855;
         public const string BasePath = @"C:\Olgabrezel\RevokeLinkBot";
         public static TelegramBotClient Bot;
         public static string OwnUsername;
