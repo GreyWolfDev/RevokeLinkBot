@@ -17,7 +17,9 @@ namespace RevokeLinkBot
             {
                 if (msg.Type == MessageType.ChatMembersAdded && msg.NewChatMembers.Any(x => x.Id == Program.Bot.BotId))
                 {
-                    await msg.Reply($"Hi there! I am @{Program.OwnUsername} and I can make your group more secure " +
+                    await msg.Reply($"Hi there! I am @{Program.OwnUsername} " +
+                        $"(<a href=\"https://github.com/GreyWolfDev/RevokeLinkBot\">🔗 GitHub</a>) " +
+                        $"and I can make your group more secure " +
                         $"by getting rid of the invite link mess that telegram groups tend to have.\n\n" +
                         $"For an explanation of what I do and why, please read this article:\n" +
                         $"https://telegra.ph/RevokeLinkBot---Manual-11-17\n\nThanks for using me!");
@@ -45,7 +47,9 @@ namespace RevokeLinkBot
 
                     case "/help":
                     help:
-                        await msg.Reply($"Hi there! I am @{Program.OwnUsername} and I can make your group more secure " +
+                        await msg.Reply($"Hi there! I am @{Program.OwnUsername} " +
+                            $"(<a href=\"https://github.com/GreyWolfDev/RevokeLinkBot\">🔗 GitHub</a>) " +
+                            $"and I can make your group more secure " +
                             $"by getting rid of the invite link mess that telegram groups tend to have.\n\n" +
                             $"For an explanation of what I do and why, please read this article:\n" +
                             $"https://telegra.ph/RevokeLinkBot---Manual-11-17\n\nThanks for using me!");
@@ -101,7 +105,7 @@ namespace RevokeLinkBot
                             markup = new InlineKeyboardMarkup(
                                 new InlineKeyboardButton[]
                                 {
-                                    InlineKeyboardButton.WithCallbackData("Revoke ↪️", $"revokelink"),
+                                    InlineKeyboardButton.WithCallbackData("Revoke ↪️", "revokelink"),
                                     InlineKeyboardButton.WithCallbackData("Cancel ❌", "cancel"),
                                 }
                             );
@@ -114,12 +118,12 @@ namespace RevokeLinkBot
                             markup = new InlineKeyboardMarkup(
                                 new InlineKeyboardButton[]
                                 {
-                                    InlineKeyboardButton.WithCallbackData("Create 💡", $"createlink"),
+                                    InlineKeyboardButton.WithCallbackData("Create 💡", "createlink"),
                                     InlineKeyboardButton.WithCallbackData("Cancel ❌", "cancel"),
                                 }
                             );
 
-                            text = $"<b>You do not currently have an invite link!</b>" +
+                            text = "<b>You do not currently have an invite link!</b>" +
                                 "\n\nPress \"<b>Create</b>\" to create a link, or \"<b>Cancel</b>\" to close this message.";
                         }
 
