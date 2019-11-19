@@ -63,7 +63,12 @@ namespace RevokeLinkBot
                                 $"<a href=\"https://t.me/{Program.OwnUsername}?start=donate\">message me in PM!</a>");
                             return;
                         }
-                        await msg.Reply("This bot is under Grey Wolf Development, all donations will go to the same place. Want to keep our bots online? Donate now and gets: Custom gifs and Badges!\n\nClick the button below to donate (you will be redirected to the werewolf bot), and go to @greywolfsupport to claim your reward if you donate via Paypal!\n\nMore Info: https://telegra.ph/Custom-Gif-Packs-and-Donation-Levels-06-27");
+                        var donatemarkup = new InlineKeyboardMarkup(new InlineKeyboardButton[][]
+                        {
+                            new[] { InlineKeyboardButton.WithUrl("Telegram", "https://t.me/werewolfbot?start=donatetg") },
+                            new[] { InlineKeyboardButton.WithUrl("Xsolla", "https://t.me/werewolfbot?start=xsolla") },
+                        });
+                        await msg.Reply("This bot is under Grey Wolf Development, all donations will go to the same place. Want to keep our bots online? Donate now and gets: Custom gifs and Badges!\n\nClick the button below to donate (you will be redirected to the werewolf bot), and go to @greywolfsupport to claim your reward if you donate via Paypal!\n\nMore Info: https://telegra.ph/Custom-Gif-Packs-and-Donation-Levels-06-27", donatemarkup);
                         return;
 
                     case "/getlink":
