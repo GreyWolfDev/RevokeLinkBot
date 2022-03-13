@@ -63,7 +63,7 @@ namespace RevokeLinkBot
         {
             try
             {
-                return await Program.Bot.SendTextMessageAsync(m.Chat.Id, text, parseMode, disableWebPagePreview, disableNotification, quote ? m.MessageId : 0, replyMarkup);
+                return await Program.Bot.SendTextMessageAsync(m.Chat.Id, text, parseMode, null, disableWebPagePreview, disableNotification, quote ? m.MessageId : 0, true, replyMarkup);
             }
             catch
             {
@@ -75,7 +75,7 @@ namespace RevokeLinkBot
         {
             try
             {
-                return await Program.Bot.EditMessageTextAsync(m.Chat.Id, m.MessageId, text, parseMode, disableWebPagePreview, replyMarkup);
+                return await Program.Bot.EditMessageTextAsync(m.Chat.Id, m.MessageId, text, parseMode, null, disableWebPagePreview, replyMarkup);
             }
             catch
             {
